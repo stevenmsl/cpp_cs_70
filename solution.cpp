@@ -13,7 +13,8 @@ using namespace std;
 
 /*takeaways
   - DP
-  - to arrive at n, you can walk from n-2 or n-1
+  - to arrive at n, you can walk two steps from n-2
+    or one step from  n-1
   - time complexity O(n)
 */
 
@@ -21,6 +22,7 @@ int Solution::climbStairs(int n)
 {
   if (n <= 2)
     return n;
+  /* dp[i-1]: number of ways to arrive at stair i */
   auto dp = vector<int>(n);
   /* base cases */
   dp[0] = 1, dp[1] = 2;
